@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import {LoginModel} from "@/stores/type";
+import { login } from "@/api/demo/index.ts"
 
 
+const systemlogin = ()=>{
+  let user:LoginModel = {username:"admin",password:"123456"}
+  login(user);
+}
 </script>
 
 <template>
   <h1>首页</h1>
+  <el-button size="large"  type="primary" @click="systemlogin()" style="width: 100%;">登录</el-button>
 </template>
 
 <style scoped>

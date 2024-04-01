@@ -30,3 +30,8 @@ user则需要你根据你的系统完善，他用来储存用户的token，权�
 目前支持测试、预发布、本地、正式环境的打包，配置好相应的请求，打包自动选择。如果使用配合使用 MareWood ，那么我只负责提交分支和代码，任何分支和环境的预览地址都可以打包。
 
 ![Repo](preview.png)
+
+```
+yarn config set ignore-engines true
+```
+

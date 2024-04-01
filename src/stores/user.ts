@@ -9,6 +9,11 @@ export type User = {
   token: string
 }//自己完善
 
+export type LoginModel={
+  password: string,
+  username:string
+}
+
 export interface UserStore {
   info: User,
 //权限之类的

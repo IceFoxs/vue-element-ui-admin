@@ -23,6 +23,14 @@ export function save(data:string)  {
   })
 }
 
+
+export function login(data:{})  {
+  return r.unhandledRequest<{name:string}>({//r.unhandledRequest不会拦截，因此响应的数据就是AxiosResponse<ResponseResult<{name:string}>>类型
+    url: '/api/login',
+    method: 'post',
+    data,
+  })
+}
 //发起FormData请求
 export function deleteMaterial(data: { id:string })  {
   return r.request<string[]>({
