@@ -34,4 +34,11 @@ user则需要你根据你的系统完善，他用来储存用户的token，权�
 ```
 yarn config set ignore-engines true
 ```
+```
+nvm install 16.0.0
+nvm use 16.0.0
+yarn install
+yarn dev
+yarn build
+```
 

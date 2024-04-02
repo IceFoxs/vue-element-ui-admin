@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import {storeToRefs} from "pinia";
-import {useRouter, useRoute,RouteRecordRaw} from 'vue-router'
+import {useRouter, useRoute} from 'vue-router'
 import {useAppStore} from "@/stores/app";
 import TabsChromeX from "@/components/tabsChrome/TabsChromeX.vue"
 import {Tab} from "@/components/tabsChrome/tab";

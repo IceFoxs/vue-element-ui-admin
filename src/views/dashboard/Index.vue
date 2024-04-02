@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {LoginModel} from "@/stores/type";
+import {LoginModel} from "@/stores/user.ts";
 import { login } from "@/api/demo/index.ts"
 
 

@@ -15,7 +15,7 @@ defineProps<{
       <el-icon v-if="menu.meta && menu.meta.icon">
         <component  :is="menu.meta.icon"/>
       </el-icon>
-      <span>{{  menu.meta.title }}</span>
+      <span>{{  menu.meta?.title }}</span>
     </template>
     <RouteMenu v-for="m in menu.children" :menu="m" :key="m.path" :path="path +'/' + m.path"/>
   </el-sub-menu>
@@ -23,7 +23,7 @@ defineProps<{
     <el-icon v-if="menu.meta && menu.meta.icon">
       <component  :is="menu.meta.icon"/>
     </el-icon>
-    <span>{{ menu.meta.title }}</span>
+    <span>{{ menu.meta?.title }}</span>
   </el-menu-item>
 </template>
 

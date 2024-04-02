@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { paginationList,save } from "@/api/demo/index.ts"
+import { paginationList } from "@/api/demo/index.ts"
 import usePagination from "@/compositionApi/pagination.ts"
 import useExtraAction from "./extraAction"
 

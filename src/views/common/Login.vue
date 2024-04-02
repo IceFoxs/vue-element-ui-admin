@@ -2,7 +2,7 @@
 import {useRouter} from "vue-router";
 import { appName,version } from "@/config/app"
 import {useUserStore} from "@/stores/user";
-import {User as UserType} from "@/stores/type";
+import {User as UserType} from "@/stores/user.ts";
 import {reactive, ref} from "vue";
 
 enum PasswordType {
