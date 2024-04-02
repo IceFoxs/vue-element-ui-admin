@@ -4,6 +4,12 @@ import { appName,version } from "@/config/app"
 import {useUserStore} from "@/stores/user";
 import {User as UserType} from "@/stores/user.ts";
 import {reactive, ref} from "vue";
+import {  onMounted, onUnmounted } from 'vue';
+import * as THREE from 'three';
+import BIRDS  from 'vanta/src/vanta.halo';
+
+
+const Area=ref(null)
 
 enum PasswordType {
   Password = "password",
@@ -27,10 +33,54 @@ const login = ()=>{
   userStore.updateUserInfo(user)
   router.push("/")
 }
+
+let vantaEffect: { destroy: () => void; } | null=null;
+
+//在两个生命周期钩子内创建vantaEffect
+
+onMounted(()=>{
+
+    vantaEffect=BIRDS ({
+
+        el:Area.value,
+
+        THREE:THREE,
+
+        //如果需要改变样式，要写在这里
+
+        //因为这里vantaEffect是没有setOptions这个方法的
+
+        // color: 0x16212a,
+
+        mouseControls: true,
+
+      touchControls: true,
+
+      gyroControls: true,
+
+      scale: 2.0,
+
+      color1: 14381274,
+
+      color2: 16443110,
+
+    })
+
+})
+
+onUnmounted(()=>{
+
+    if(vantaEffect){
+
+        vantaEffect.destroy()
+
+    }
+
+})
 </script>
 
 <template>
-  <div class="login">
+  <div class="login" ref="Area">
     <div class="login-box">
       <h1>{{ appName }}</h1>
       <p class="version">Version {{ version }}</p>
@@ -81,6 +131,10 @@ const login = ()=>{
   background: #9e9e9e;
   align-items: center;
   .login-box{
+    z-index: 999;
+    position: absolute;
+    top: 26%;
+    right: 5%;
     width: 500px;
     background: white;
     border-radius: 8px;
